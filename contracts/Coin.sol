@@ -12,24 +12,28 @@ contract Coin{
         minter = msg.sender;
     } 
 
-    function mint(address receiver, uint amount) public {
-        require(msg.sender == receiver, "Only the minter can mint coins");
-        balances[receiver] = amount;
+    function mint(uint amount) public {
+        require(msg.sender == minter, "Only the minter can mint coins");
+        balances[msg.sender] = amount;
     }
 
 
     error InsufficientBalance(uint requested, uint available);
 
 
-    function send(address receiver, uint amount) public {
-        if(amount <= balances[msg.sender]){
+    function send(address sender,address receiver, uint amount) public {
+        if(amount >= balances[sender]){
             revert  InsufficientBalance(amount, balances[minter]);
         }
 
-        balances[msg.sender] -= amount;
+        balances[sender] -= amount;
         balances[receiver] += amount;
-        emit Send(msg.sender, receiver, amount);
+        emit Send(sender, receiver, amount);
     }
 
+
+function getBalance(address user) public view returns (uint){
+    return balances[user];  
+}
 
 }

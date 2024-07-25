@@ -5,12 +5,12 @@ const { ignition } = require("@nomicfoundation/hardhat-ignition/modules");
 // Define the deployment process using an async function
 async function main() {
   // Here we specify which module to deploy. The 'LockModule' refers to your module's name.
-  const deployment = await ignition("ContractsModule");
+  const deployment = await ignition("NewContractsModule");
 
   // Check the deployment status and log the deployed contract address
   if (deployment.status === "deployed") {
     console.log(
-      `Lock contract deployed at: ${deployment.contracts.lock.address}`
+      `Coin contract deployed at: ${deployment.contracts.lock.address}`
     );
   } else {
     console.error("Deployment failed:", deployment.error);

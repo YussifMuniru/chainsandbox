@@ -1,4 +1,6 @@
 {
   "LockModule#Lock": "0xF20a60bfd145b596B534CA3Dd04E006B9F169062",
-  "ContractsModule#Counter": "0x6038a1a272cF88e6E54142dcF5B852bf7Ed49d9e"
+  "ContractsModule#Counter": "0x6038a1a272cF88e6E54142dcF5B852bf7Ed49d9e",
+  "ContractsModule#Coin": "0x67108595Db2367aF7E92F5CE2aEF1a4c2436aFA6",
+  "NewContractsModule#Coin": "0xA77f4b4A68107C9Bde4dc21688b9cE67C74F5CbF"
 }
